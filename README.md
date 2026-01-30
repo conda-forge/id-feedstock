@@ -3,11 +3,13 @@ About id-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/id-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/di/id
+Home: https://pypi.org/project/id
 
 Package license: Apache-2.0
 
 Summary: A tool for generating OIDC identities
+
+Development: https://github.com/di/id
 
 Current build status
 ====================

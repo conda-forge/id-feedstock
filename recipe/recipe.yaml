@@ -3,6 +3,7 @@ schema_version: 1
 
 context:
   version: "1.6.0"
+  python_check_max: "3.14"
 
 package:
   name: id
@@ -20,26 +21,27 @@ build:
 
 requirements:
   host:
-    - python ${{ python_min }}.*
     - flit-core >=3.2,<4
     - pip
+    - python ${{ python_min }}.*
   run:
     - python >=${{ python_min }}
-    - requests
+    - urllib3 >=2,<3
 
 tests:
   - python:
-      python_version: ${{ python_min }}.*
+      imports: id
       pip_check: true
-      imports:
-        - id
+      python_version:
+        - ${{ python_min }}.*
+        - ${{ python_check_max }}.*
   - files:
       source:
         - test/
     requirements:
       run:
-        - pytest-cov
         - pretend
+        - pytest-cov
         - python ${{ python_min }}.*
     script:
       - coverage run --source=id --branch -m pytest -vv --tb=long --color=yes
@@ -49,7 +51,8 @@ about:
   summary: A tool for generating OIDC identities
   license: Apache-2.0
   license_file: LICENSE
-  homepage: https://github.com/di/id
+  homepage: https://pypi.org/project/id
+  repository: https://github.com/di/id
 
 extra:
   recipe-maintainers:

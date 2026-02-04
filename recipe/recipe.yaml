@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "1.6.0"
+  version: "1.6.1"
   python_check_max: "3.14"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/i/id/id-${{ version }}.tar.gz
-  sha256: 4ca6e16f99e34d87ff2d9044fdf3bf278fcff33de56745a3734af9101fff6269
+  sha256: d0732d624fb46fd4e7bc4e5152f00214450953b9e772c182c1c22964def1a069
 
 build:
   number: 0
